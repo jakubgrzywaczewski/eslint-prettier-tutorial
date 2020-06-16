@@ -70,6 +70,9 @@
     `"lint": "eslint ./src --ext .js,.jsx"`
 
 11. Add .eslintignore
+
+   `src/serviceWorker.js`
+   
 12. Install husky
 
     `npm i -D husky lint-staged`
