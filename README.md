@@ -19,45 +19,70 @@
 
 6. Create .eslintrc.json
 
-```json
-{
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": ["error"]
-  }
-}
-```
+   ```json
+   {
+     "extends": ["airbnb", "prettier"],
+     "plugins": ["prettier"],
+     "rules": {
+       "prettier/prettier": ["error"]
+     }
+   }
+   ```
 
 7. Create .prettierrc
 
-```json
-{
-  "printWidth": 100,
-  "singleQuote": true
-}
-```
+   ```json
+   {
+     "printWidth": 100,
+     "singleQuote": true
+   }
+   ```
 
 8. Set up format on save in VS Code
 
-`"editor.formatOnSave": true`
+   `"editor.formatOnSave": true`
 
 9. Add simple rules
 
-```json
-{
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
-    "react/jsx-one-expression-per-line": "off"
-  }
-}
-```
+   ```json
+   {
+     "env": {
+       "browser": true,
+       "es6": true,
+       "jest": true
+     },
+     "extends": ["airbnb", "prettier"],
+     "plugins": ["prettier"],
+     "rules": {
+       "prettier/prettier": [
+         "error",
+         {
+           "endOfLine": "auto"
+         }
+       ],
+       "react/jsx-one-expression-per-line": "off"
+     }
+   }
+   ```
 
-10. Add .eslintignore
+10. Add lint command
+
+    `"lint": "eslint ./src --ext .js,.jsx"`
+
+11. Add .eslintignore
+12. Install husky
+
+    `npm i -D husky lint-staged`
+
+13. Set linting pre-commit
+
+    ```json
+    "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged"
+        }
+      },
+      "lint-staged": {
+        "./src/*.{js,jsx,ts,tsx}": "eslint --fix"
+      }
+    ```
