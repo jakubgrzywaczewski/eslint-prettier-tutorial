@@ -83,6 +83,6 @@
         }
       },
       "lint-staged": {
-        "./src/*.{js,jsx,ts,tsx}": "eslint --fix"
+        "./src/*.{js,jsx}": "eslint --fix"
       }
     ```
