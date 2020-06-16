@@ -60,7 +60,8 @@
            "endOfLine": "auto"
          }
        ],
-       "react/jsx-one-expression-per-line": "off"
+       "react/jsx-one-expression-per-line": "off",
+       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
      }
    }
    ```
@@ -71,7 +72,7 @@
 
 11. Add .eslintignore
 
-   `src/serviceWorker.js`
+    `src/serviceWorker.js`
    
 12. Install husky
 
